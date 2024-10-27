@@ -144,8 +144,9 @@ int main() {
             students_changed = reverse(students);
             cout << "Students Reversed:" << endl;
             for(int i=0; i<students_changed.size(); i++) {
-                cout << students_changed[i].get_name() << ":" << students_changed[i].get_groups()[0] << endl;
+                cout << students_changed[i].get_name() << ":" << students_changed[i].get_groups()[0] << " ";
             }
+            cout << endl;
             calc_students(professors, students);
             break;
         case 2:
