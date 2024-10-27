@@ -4,7 +4,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
-#include <format>
+
 using namespace std;
 
 class university_person {
