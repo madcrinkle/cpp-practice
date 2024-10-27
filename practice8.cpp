@@ -131,8 +131,6 @@ int main() {
     for(int i=0; i<1000; i++) {
         students.push_back(student("Student"+ to_string(i), vector<string>{ all_groups[rand() % 3] } ));
     }
-    auto iter = students.cbegin();
-    int position = students.size()/2;
 
     cout << "Введите вариант задачи:" << endl;
     cout << "   1: Развернуть вектор студентов" << endl;
@@ -154,7 +152,7 @@ int main() {
             for(int i=1000; i<1500; i++) {
                 students_changed.push_back(student("Student"+ to_string(i), vector<string>{ all_groups[rand() % 3] } ));
             }
-            students.insert(iter+position, students_changed.begin(), students_changed.end());
+            students.insert(students.cbegin()+students.size()/2, students_changed.begin(), students_changed.end());
             for(int i=0; i<students.size(); i++) {
                 cout << students[i].get_name() << ":" << students[i].get_groups()[0] << " ";
             }
