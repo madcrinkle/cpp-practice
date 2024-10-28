@@ -59,38 +59,37 @@ void show_coordinates(point rectangle[4]) {
     }
 }
 
-// !!! Лишная функция, можно не делать
 // Функция подсчета правильного четырехугольника, за счет вычисления центра масс и сортировки точек по радиус-вектору
-// void prepare_rectangle(point rectangle[4]) {
-//     // Вычисляем координаты центра масс
-//     double sum_x = {};
-//     double sum_y = {};
-//     for(int i = 0; i < 4; i++) {
-//         sum_x += rectangle[i].get_x();
-//         sum_y += rectangle[i].get_y();
-//     }
-//     point сenter = point(sum_x/4,sum_y/4);
+void prepare_rectangle(point rectangle[4]) {
+    // // Вычисляем координаты центра масс
+    // double sum_x = {};
+    // double sum_y = {};
+    // for(int i = 0; i < 4; i++) {
+    //     sum_x += rectangle[i].get_x();
+    //     sum_y += rectangle[i].get_y();
+    // }
+    // point сenter = point(sum_x/4,sum_y/4);
 
-//     // Подсчитываем угол который образует радиус-вектор
-//     for(int i = 0; i < 4; i++) {
-//         rectangle[i].set_angle(atan2(rectangle[i].get_y() - сenter.get_y(), rectangle[i].get_x() - сenter.get_x()));
-//     }
+    // // Подсчитываем угол который образует радиус-вектор
+    // for(int i = 0; i < 4; i++) {
+    //     rectangle[i].set_angle(atan2(rectangle[i].get_y() - сenter.get_y(), rectangle[i].get_x() - сenter.get_x()));
+    // }
 
-//     // Сортируем точки по возрастанию угла радиус-вектор
-//     for(int i = 1; i < 4; i++) {
-//         int j = i - 1;
-//         while(j >= 0 && rectangle[j].get_angle() > rectangle[j + 1].get_angle()) {
-//             swap(rectangle[j], rectangle[j + 1]);
-//             j--;
-//         }
-//     }
+    // // Сортируем точки по возрастанию угла радиус-вектор
+    // for(int i = 1; i < 4; i++) {
+    //     int j = i - 1;
+    //     while(j >= 0 && rectangle[j].get_angle() > rectangle[j + 1].get_angle()) {
+    //         swap(rectangle[j], rectangle[j + 1]);
+    //         j--;
+    //     }
+    // }
 
-//     // Задаем имена для точек
-//     string point_names[4] = {"A", "B", "C", "D"};
-//     for(int i = 0; i < 4; i++) {
-//         rectangle[i].name = point_names[i];
-//     }
-// }
+    // Задаем имена для точек
+    string point_names[4] = {"A", "B", "C", "D"};
+    for(int i = 0; i < 4; i++) {
+        rectangle[i].name = point_names[i];
+    }
+}
 
 // Функция подсчета длин сторон четырехугольника
 void calc_sides(point rectangle[4]) {
@@ -157,7 +156,7 @@ int main() {
     rectangle[1] = { point(1,4) };
     rectangle[2] = { point(-1,0) };
     rectangle[3] = { point(3,4) };
-    // prepare_rectangle(rectangle);
+    prepare_rectangle(rectangle);
 
     university_person university[6] = {
         university_person("Ivanov", "professor", vector<string>{ "Group1", "Group2" }),
