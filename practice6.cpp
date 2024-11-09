@@ -42,11 +42,11 @@ void show_project(University::student students[]) {
 
 int main() {
     University::student *students = new University::student[5];
-    students[0] = University::student("Kuznetsov", vector<string>{ "Group1" });
-    students[1] = University::student("Sidorov", vector<string>{ "Group2" });
-    students[2] = University::student("Kozlov", vector<string>{ "Group3" });
-    students[3] = University::student("Sokolov", vector<string>{ "Group1" });
-    students[4] = University::student("Mikhailov", vector<string>{ "Group2" });
+    students[0] = University::student("Kuznetsov", "Group1");
+    students[1] = University::student("Sidorov", "Group2");
+    students[2] = University::student("Kozlov", "Group3");
+    students[3] = University::student("Sokolov", "Group1");
+    students[4] = University::student("Mikhailov", "Group2");
 
     University::professor *professors = new University::professor[5];
     professors[0] = University::professor("Ivanov", vector<string>{ "Group1", "Group2" });

@@ -114,6 +114,12 @@ template <class X> X reverse(X &vector){
     }
     return reversed;
 }
+template <class X> void check_empty(X &vector){
+    if(vector.empty())
+        cout << "Vector is empty" << endl;
+    else
+        cout <<"Vector has size "<< vector.size() << endl;
+}
 
 int main() {
     vector<professor> professors = {
@@ -148,6 +154,11 @@ int main() {
             }
             cout << endl;
             calc_students(professors, students);
+            cout << "Очистка вектора students" << endl;
+            students.clear();
+            check_empty(students);
+            cout << "Очистка вектора students_changed" << endl;
+            check_empty(students_changed);
             break;
         case 2:
             for(int i=1000; i<1500; i++) {
@@ -159,6 +170,11 @@ int main() {
             }
             cout << endl;
             calc_students(professors, students);
+            cout << "Очистка вектора students" << endl;
+            students.clear();
+            check_empty(students);
+            cout << "Очистка вектора students_changed" << endl;
+            check_empty(students_changed);
             break;
         default: cout << "Неверный ввод: \n";
     }

@@ -13,12 +13,12 @@ void calc_students(student students[], professor professors[]) {
     map <string, int> students_count;
     // Подсчитываем студентов обучающихся у преподавателей
     for (int i=0; i<5; i++) {
-        vector<string> student_group = students[i].get_groups();
+        string student_group = students[i].get_group();
         for (int j=0; j<5; j++) {
             string professor_name = professors[j].get_professor_name();
             vector<string> professor_groups = professors[j].get_professor_group();
             for (const auto& group : professor_groups) {
-                if ( group == student_group[0] ) {
+                if ( group == student_group ) {
                     students_count[professor_name] += 1;
                 }
             }
@@ -32,11 +32,11 @@ void calc_students(student students[], professor professors[]) {
 
 int main() {
     student *students = new student[5];
-    students[0] = student("Kuznetsov", vector<string>{ "Group1" });
-    students[1] = student("Sidorov", vector<string>{ "Group2" });
-    students[2] = student("Kozlov", vector<string>{ "Group3" });
-    students[3] = student("Sokolov", vector<string>{ "Group1" });
-    students[4] = student("Mikhailov", vector<string>{ "Group2" });
+    students[0] = student("Kuznetsov", "Group1");
+    students[1] = student("Sidorov", "Group2");
+    students[2] = student("Kozlov", "Group3");
+    students[3] = student("Sokolov", "Group1");
+    students[4] = student("Mikhailov", "Group2");
 
     professor *professors = new professor[5];
     professors[0] = professor("Ivanov", vector<string>{ "Group1", "Group2" });
