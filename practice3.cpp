@@ -84,11 +84,11 @@ void make_struct() {
 
     // объявляем массив структур
     university_person university[5] = {
-        "Ivanov", "professor", "none",
-        "Petrov", "professor", "none",
-        "Kuznetsov", "student", "Petrov",
-        "Sidorov", "student", "Ivanov",
-        "Kozlov", "student", "Petrov",
+        {"Ivanov", "professor", "none"},
+        {"Petrov", "professor", "none"},
+        {"Kuznetsov", "student", "Petrov"},
+        {"Sidorov", "student", "Ivanov"},
+        {"Kozlov", "student", "Petrov"},
     };
     // создаем поток вывода, создаем файл и открываем на запись
     ofstream out;

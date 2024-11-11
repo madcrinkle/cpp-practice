@@ -22,6 +22,7 @@ namespace University {
                 cout << "Name: " << full_name << endl;
             }
     };
+
     class student;
     class professor: private university_person {
         private:
